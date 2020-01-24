@@ -1,0 +1,28 @@
+{
+    "name": "isfar/phpunit-mock-example",
+    "description": "PHPUnit Mock Example",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^6.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Example\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Example\\Tests\\": "tests/"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Isfar Sifat",
+            "email": "isfar.sifat@gmail.com"
+        }
+    ]
+}
