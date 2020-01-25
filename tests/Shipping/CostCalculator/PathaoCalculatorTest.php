@@ -13,7 +13,7 @@ use Psr\Http\Message\ResponseInterface;
 
 class PathaoCalculatorTest extends TestCase
 {
-    public function testCalculate()
+    public function testCalculateWhenClientReturnsValidResponse(): void
     {
         $response = $this->createMock(ResponseInterface::class);
         $response
@@ -31,7 +31,7 @@ class PathaoCalculatorTest extends TestCase
 
         $calculator = new PathaoCalculator($httpClient);
 
-        $product = new Product('4', '1', '1', '1', '1');
+        $product = new Product('4', '1.5', '5', '4', '2');
 
         $output = $calculator->calculate($product);
         
@@ -40,7 +40,7 @@ class PathaoCalculatorTest extends TestCase
         $this->assertSame($expected, $output);
     }
 
-    public function testCalculateThrowsException()
+    public function testCalculateThrowsException(): void
     {
         $this->expectException(CalculatorException::class);
 
@@ -53,7 +53,7 @@ class PathaoCalculatorTest extends TestCase
             ->willThrowException($guzzleException)
         ;
 
-        $product = new Product('4', '1', '1', '1', '1');
+        $product = new Product('4', '1');
 
         $calculator = new PathaoCalculator($httpClient);
         

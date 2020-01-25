@@ -13,7 +13,7 @@ class WeightCalculatorTest extends TestCase
     {
         $calculator = new WeightCalculator('2');
 
-        $product = new Product('1', '5.20', '1', '1', '1');
+        $product = new Product('1', '5.20');
 
         $output = $calculator->calculate($product);
 

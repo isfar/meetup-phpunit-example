@@ -16,6 +16,13 @@ class PathaoCalculator implements CalculatorInterface
         $this->httpClient = $httpClient;
     }
     
+    /**
+     * @param Product $product
+     * 
+     * @return string
+     *
+     * @throws CalculatorException
+     */ 
     public function calculate(Product $product): string
     {
         try {
@@ -32,7 +39,9 @@ class PathaoCalculator implements CalculatorInterface
                             'height' => $product->getHeight(),
                         ],
                     ]
-                );
+                )
+            ;
+
         } catch (GuzzleException $guzzleException) {
             throw new CalculatorException('Error calculating cost: ' . $guzzleException->getMessage());
         }

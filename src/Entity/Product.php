@@ -15,9 +15,9 @@ class Product
     public function __construct(
         string $id,
         string $weight,
-        string $length,
-        string $width,
-        string $height
+        ?string $length = null,
+        ?string $width = null,
+        ?string $height = null
     ) {
         $this->id = $id;
         $this->weight = $weight;
@@ -36,17 +36,17 @@ class Product
         return $this->weight;
     }
 
-    public function getLength(): string
+    public function getLength(): ?string
     {
         return $this->length;
     }
 
-    public function getHeight(): string
+    public function getHeight(): ?string
     {
         return $this->height;
     }
 
-    public function getWidth(): string
+    public function getWidth(): ?string
     {
         return $this->width;
     }
